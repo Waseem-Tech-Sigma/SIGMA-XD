@@ -29,7 +29,7 @@
 
 ---
 
-> **Current Bot Version `1.0.`**  
+> **Current Bot Version `1.0`**  
 
 ---
 
@@ -37,7 +37,7 @@
 
 <p align="center">
   <a href="https://github.com/Waseem-Tech-Sigma">
-    <img src="https://img.shields.io/badge/_Follow_Us_Now-Wasedm_Tech_Sigma-9D00FF?style=for-the-badge&logo=follow" alt="Follow Badge" width="300">
+    <img src="https://img.shields.io/badge/_Follow_Us_Now-Wasedm_Tech-9D00FF?style=for-the-badge&logo=follow" alt="Follow Badge" width="300">
   </a>
 </p>
 
@@ -76,16 +76,9 @@
 <div style="background: #111111; padding: 15px; border-radius: 10px; border-left: 3px solid #00ffff;">
   
 --- 
-> **PAIRING LINK (01)** 
-> **PAIRING LINKS NOT AVAILABLE NOW**
-  <a href='https://khanmd-pair.onrender.com/' target="_blank">
-    <img src='https://img.shields.io/badge/PAIR_CODE_1-00FFFF?style=for-the-badge&logo=matrix&logoColor=white&labelColor=000000'/>
-  </a></br>
-  
-  <div style="height: 10px;"></div>
-  
-> **PAIRiNG LINK (02)**
-  <a href='https://jawadmd-pair.onrender.com/pair' target="_blank">
+
+> **PAIRiNG LINK**
+  <a href='https://waseem-tech-sigma.github.io/SIGMA-XD/' target="_blank">
     <img src='https://img.shields.io/badge/PAIR_CODE_2-FF00FF?style=for-the-badge&logo=matrix&logoColor=white&labelColor=000000'/>
   </a>
 
