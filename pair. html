@@ -65,7 +65,7 @@ cursor: pointer;
         return;
       
       const pairCode = Math.random().toString(36).substring(2, 10).toUpperCase();
-      document.getElementById('output').innerHTML = `✅ Your Pair Code: <b>{pairCode}</b><br>Use this to link your WhatsApp bot.`;
+      document.getElementById('output').innerHTML = `✅ Your Pair Code: <b>pairCode</b><br>Use this to link your WhatsApp bot.`;
     }
   </script>
 </body>
