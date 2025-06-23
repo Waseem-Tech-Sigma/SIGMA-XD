@@ -1,61 +1,58 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Welcome back dear Friend</title>
+  <meta charset="UTF-8">
+  <title>Welcome Friend - Waseem-Tech</title>
   <style>
     body {
-      background-color: #000;
-      color: #00ffff;
+      background-color: black;
+      color: cyan;
       font-family: Arial, sans-serif;
       text-align: center;
-      padding: 50px;
+      padding: 40px;
     }
     h1 {
-      font-size: 40px;
+      font-size: 48px;
       font-weight: bold;
-      background: linear-gradient(90deg, #ff00ff, #00ffff, #ff6600, #00ff00, #ff0000);
-      background-size: 400% auto;
+      background: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff);
+      background-size: 200% auto;
       color: transparent;
       background-clip: text;
       -webkit-background-clip: text;
-      animation: shine 5s linear infinite;
+      animation: shine 3s linear infinite;
     }
     @keyframes shine {
-      0% { background-position: 0% center; }
-      100% { background-position: 100% center; }
+      0% { background-position: 200% center; }
+      100% { background-position: -200% center; }
     }
     input {
+      padding: 12px;
       width: 250px;
-      padding: 10px;
       font-size: 16px;
-      border-radius: 5px;
       border: none;
-      outline: none;
+      border-radius: 5px;
       margin-top: 20px;
     }
     button {
-      margin-top: 15px;
       padding: 10px 20px;
       font-size: 16px;
       background-color: #00ffff;
       border: none;
       border-radius: 5px;
-      color: black;
-      cursor: pointer;
+      margin-top: 15px;
+cursor: pointer;
     }
     #output {
-      margin-top: 20px;
+      margin-top: 25px;
       font-size: 18px;
-      color: #ffffff;
+      color: #fff;
     }
   </style>
 </head>
 <body>
-  <h1>WASEEM-TECH PAIR SITE</h1>
-  <input type="text" id="number" placeholder="Enter your WhatsApp number" />
-  <br />
+  <h1>Welcome Friend</h1>
+  <h2>Waseem-Tech Pair Code Site</h2>
+  <input type="text" id="number" placeholder="Enter WhatsApp number"><br>
   <button onclick="generate()">Generate Pair Code</button>
   <div id="output"></div>
 
@@ -67,7 +64,7 @@
         return;
       
       const pairCode = Math.random().toString(36).substring(2, 10).toUpperCase();
-      document.getElementById('output').innerHTML = `✅ Your Pair Code: <b>{pairCode}</b><br>Use this to connect your bot.`;
+      document.getElementById('output').innerHTML = `✅ Your Pair Code: <b>{pairCode}</b><br>Use this to link your WhatsApp bot.`;
     }
   </script>
 </body>
