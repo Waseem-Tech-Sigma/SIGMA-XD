@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Welcome back dear Friend</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ffff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 40px;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff00ff, #00ffff, #ff6600, #00ff00, #ff0000);
+      background-size: 400% auto;
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      animation: shine 5s linear infinite;
+    }
+    @keyframes shine {
+      0% { background-position: 0% center; }
+      100% { background-position: 100% center; }
+    }
+    input {
+      width: 250px;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      margin-top: 20px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #00ffff;
+      border: none;
+      border-radius: 5px;
+      color: black;
+      cursor: pointer;
+    }
+    #output {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <h1>WASEEM-TECH PAIR SITE</h1>
+  <input type="text" id="number" placeholder="Enter your WhatsApp number" />
+  <br />
+  <button onclick="generate()">Generate Pair Code</button>
+  <div id="output"></div>
+
+  <script>
+    function generate() {
+      const num = document.getElementById('number').value.trim();
+      if (!/^[0-9]{8,15}/.test(num)) 
+        document.getElementById('output').innerHTML = "❌ Invalid number! Enter 8 to 15 digits.";
+        return;
+      
+      const pairCode = Math.random().toString(36).substring(2, 10).toUpperCase();
+      document.getElementById('output').innerHTML = `✅ Your Pair Code: <b>{pairCode}</b><br>Use this to connect your bot.`;
+    }
+  </script>
+</body>
+</html>
