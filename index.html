@@ -1,71 +1,89 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Welcome Friend - Waseem-Tech</title>
+  <title>WASEEM TECH Pair</title>
   <style>
     body {
-      background-color: black;
+      background-color: #000;
+      font-family: sans-serif;
       color: cyan;
-      font-family: Arial, sans-serif;
       text-align: center;
       padding: 40px;
     }
-    h1 {
-      font-size: 48px;
-      font-weight: bold;
-      background: linear-gradient(90deg, #00ffff, #ff00ff, #00ffff);
-      background-size: 200% auto;
-      color: transparent;
-      background-clip: text;
-      -webkit-background-clip: text;
-      animation: shine 3s linear infinite;
+    .container {
+      background-color: #111;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 0 20px cyan;
+      display: inline-block;
     }
-    @keyframes shine {
-      0% { background-position: 200% center; }
-      100% { background-position: -200% center; }
+    .icon {
+      font-size: 50px;
+      background: cyan;
+      border-radius: 50%;
+      padding: 20px;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    h1 {
+      color: cyan;
+      margin-bottom: 10px;
     }
     input {
-      padding: 12px;
-      width: 250px;
-      font-size: 16px;
-      border: none;
+      padding: 10px;
+      width: 260px;
       border-radius: 5px;
-      margin-top: 20px;
+      border: none;
+      margin-top: 10px;
     }
     button {
+      margin-top: 15px;
       padding: 10px 20px;
       font-size: 16px;
-      background-color: #00ffff;
+      background: cyan;
+      color: #000;
       border: none;
       border-radius: 5px;
-      margin-top: 15px;
-cursor: pointer;
+      cursor: pointer;
     }
     #output {
-      margin-top: 25px;
-      font-size: 18px;
-      color: #fff;
+      margin-top: 20px;
+      color: white;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+     color: gray;
     }
   </style>
 </head>
 <body>
-  <h1>Welcome Friend</h1>
-  <h2>Waseem-Tech Pair Code Site</h2>
-  <input type="text" id="number" placeholder="Enter WhatsApp number"><br>
-  <button onclick="generate()">Generate Pair Code</button>
-  <div id="output"></div>
+  <div class="container">
+    <div class="icon">🤖</div>
+    <h1>WASEEM TECH Pair</h1>
+    <p>Generate your WhatsApp pair code</p>
+    <input type="text" id="number" placeholder="Enter WhatsApp number with country code"><br>
+    <button onclick="generate()">🔑 Generate Pair Code</button>
+    <div id="output">Your pair code will appear here</div>
+  </div>
+  <footer>© 2025 WASEEM TECH | SIGMA-XD</footer>
 
   <script>
     function generate() {
       const num = document.getElementById('number').value.trim();
       if (!/^[0-9]{8,15}/.test(num)) 
-        document.getElementById('output').innerHTML = "❌ Invalid number! Enter 8 to 15 digits.";
+        document.getElementById('output').innerHTML = "❌ Invalid number!";
         return;
       
-      const pairCode = Math.random().toString(36).substring(2, 10).toUpperCase();
-      document.getElementById('output').innerHTML = `✅ Your Pair Code: <b>pairCode</b><br>Use this to link your WhatsApp bot.`;
+      fetch('/getcode')
+        .then(res => res.json())
+        .then(data => 
+          document.getElementById('output').innerHTML = `✅ Your Pair Code: <b>data.code</b>`;
+        })
+        .catch(() => {
+          document.getElementById('output').innerHTML = "❌ Could not fetch pair code.";
+        });
     }
   </script>
 </body>
