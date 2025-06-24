@@ -1,7 +1,7 @@
 {
   "name": "SIGMA-XD",
-  "version": "1.0",
-  "description": "A WhatsApp Bot Created By WASEEM-TechX",
+  "version": "1.0.0",
+  "description": "A WhatsApp Bot Created By WASEEM-Tech",
   "main": "index.js",
   "scripts": {
     "start": "pm2 start index.js --deep-monitoring --attach --name SIGMA-XD",
