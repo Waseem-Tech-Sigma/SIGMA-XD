@@ -1,92 +1,64 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Magical UI - WASEEM-TECH</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SIGMA-XD | Pair Site</title>
   <style>
     body {
       margin: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-      background-size: 600% 600%;
-      animation: bgAnimation 10s ease infinite;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928DAB);
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: 'Segoe UI', sans-serif;
+      min-height: 100vh;
       overflow: hidden;
     }
-
-    @keyframes bgAnimation {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
     .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      padding: 40px;
-      width: 90%;
-      backdrop-filter: blur(12px);
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
-
     .box {
+      width: 200px;
+      height: 200px;
       background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(15px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
       border-radius: 20px;
-      padding: 30px;
-      text-align: center;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.3em;
       color: #fff;
-      box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
-      transition: 0.3s;
-      transform: perspective(800px) rotateX(0deg) rotateY(0deg);
-        animation: float 6s ease-in-out infinite;
+      text-align: center;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      transform-style: preserve-3d;
+      perspective: 800px;
     }
-
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-15px); }
-    }
-
     .box:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 40px rgba(255, 0, 255, 0.6);
+      transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+      background: rgba(255, 255, 255, 0.2);
     }
-
-    h2 {
-      margin-bottom: 15px;
-      font-size: 24px;
-      background: linear-gradient(to right, #00f0ff, #ff00c8);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    p {
-      font-size: 16px;
-      line-height: 1.5;
-      color: #ddd;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="box">
-      <h2>© Waseem-Tech</h2>
-      <p>This is your magical 3D interface</p>
-    </div>
-    <div class="box">
-      <h2>Pair Code</h2>
-      <p>Enter number to get your pairing code</p>
-    </div>
-    <div class="box">
-      <h2>WASEEM-TECH</h2>
-      <p>Powered by SIGMA-XD</p>
-    </div>
-    <div class="box">
-      <h2>Features</h2>
-      <p>Over 370+ bot commands included</p>
-    </div>
+    <a href="pair.html">
+      <div class="box">Generate Pair Code</div>
+    </a>
+    <div class="box">Docs</div>
+    <div class="box">Support</div>
+    <div class="box">WASEEM-TECH</div>
   </div>
 </body>
 </html>
