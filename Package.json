@@ -1,6 +1,4 @@
-
-{
-  "name": "SIGMA-XD",
+ "name": "sigma-xd",
   "version": "1.0.0",
   "description": "A WhatsApp Bot by WASEEM-TECH powered by Baileys",
   "main": "index.js",
