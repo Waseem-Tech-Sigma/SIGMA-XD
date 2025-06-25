@@ -1,89 +1,52 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>WASEEM TECH Pair</title>
+  <meta charset="UTF-8" />
+  <title>WASEEM-TECH Pair Code</title>
   <style>
     body {
-      background-color: #000;
-      font-family: sans-serif;
-      color: cyan;
+      background: linear-gradient(270deg, #00f, #0ff, #f0f, #f00);
+      background-size: 800% 800%;
+      animation: gradient 10s ease infinite;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
       text-align: center;
-      padding: 40px;
+      padding-top: 100px;
     }
-    .container {
-      background-color: #111;
-      border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 0 20px cyan;
-      display: inline-block;
+    @keyframes gradient {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
-    .icon {
-      font-size: 50px;
-      background: cyan;
-      border-radius: 50%;
-      padding: 20px;
-      margin-bottom: 20px;
-      display: inline-block;
-    }
-    h1 {
-      color: cyan;
-      margin-bottom: 10px;
-    }
-    input {
-      padding: 10px;
-      width: 260px;
-      border-radius: 5px;
+    input, button {
+      padding: 15px;
       border: none;
-      margin-top: 10px;
+      margin: 10px;
+      font-size: 18px;
+      border-radius: 8px;
     }
     button {
-      margin-top: 15px;
-      padding: 10px 20px;
-      font-size: 16px;
-      background: cyan;
-      color: #000;
-      border: none;
-      border-radius: 5px;
+      background: #000;
+      color: cyan;
       cursor: pointer;
-    }
-    #output {
-      margin-top: 20px;
-      color: white;
-    }
-    footer {
-      margin-top: 40px;
-      font-size: 14px;
-     color: gray;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="icon">🤖</div>
-    <h1>WASEEM TECH Pair</h1>
-    <p>Generate your WhatsApp pair code</p>
-    <input type="text" id="number" placeholder="Enter WhatsApp number with country code"><br>
-    <button onclick="generate()">🔑 Generate Pair Code</button>
-    <div id="output">Your pair code will appear here</div>
-  </div>
-  <footer>© 2025 WASEEM TECH | SIGMA-XD</footer>
+  <h1>🤖 SIGMA-XD</h1>
+  <h2>Powered by WASEEM-TECH</h2>
+  <input type="text" id="number" placeholder="Enter your WhatsApp number" />
+  <br />
+  <button onclick="generateCode()">Get Pair Code</button>
+  <h3 id="codeBox">Pair code will appear here...</h3>
 
   <script>
-    function generate() {
-      const num = document.getElementById('number').value.trim();
-      if (!/^[0-9]{8,15}/.test(num)) 
-        document.getElementById('output').innerHTML = "❌ Invalid number!";
-        return;
-      
-      fetch('/getcode')
-        .then(res => res.json())
-        .then(data => 
-          document.getElementById('output').innerHTML = `✅ Your Pair Code: <b>data.code</b>`;
-        })
-        .catch(() => {
-          document.getElementById('output').innerHTML = "❌ Could not fetch pair code.";
-        });
+    async function generateCode() {
+      const res = await fetch('/getcode');
+      const data = await res.json();
+      document.getElementById('codeBox').innerHTML =
+        'Your Pair Code: <b>' + data.code + '</b>';
     }
   </script>
 </body>
