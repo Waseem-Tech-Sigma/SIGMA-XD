@@ -1,12 +1,12 @@
-Dockerfile
 FROM node:lts
 
 WORKDIR /app
 
-COPY . .
-
+COPY package.json .
 RUN npm install
+
+COPY . .
 
 EXPOSE 3000
 
-CMD ["npx", "pm2-runtime", "start", "index.js"]
+CMD ["npm", "start"]
