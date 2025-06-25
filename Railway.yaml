@@ -1,0 +1,8 @@
+services:
+  - name: sigma-xd
+    startCommand: npm start
+    buildCommand: npm install
+    rootDirectory: ./
+    envVars:
+      - key: NODE_ENV
+        value: production
