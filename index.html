@@ -2,63 +2,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SIGMA-XD | Pair Site</title>
+  <meta charset="UTF-8">
+  <title>Pair Code | SIGMA-XD</title>
   <style>
     body {
       margin: 0;
+      padding: 0;
+      background: linear-gradient(120deg, #1a2a6c, #b21f1f, #fdbb2d);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      height: 100vh;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #1f1c2c, #928DAB);
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      overflow: hidden;
     }
-    .container {
-      display: flex;
-      gap: 25px;
-      flex-wrap: wrap;
-      justify-content: center;
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
-    .box {
-      width: 200px;
-      height: 200px;
+
+    .glass {
       background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(15px);
-      border: 2px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.3em;
-      color: #fff;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
       text-align: center;
-      transition: all 0.4s ease;
+      width: 300px;
+      color: white;
+    }
+
+    input {
+      padding: 10px;
+      width: 90%;
+      border-radius: 5px;
+      border: none;
+      margin-top: 15px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 20px;
+      background: #00ffff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
       cursor: pointer;
-      transform-style: preserve-3d;
-      perspective: 800px;
+      color: black;
+      font-weight: bold;
     }
-    .box:hover {
-      transform: rotateY(10deg) rotateX(10deg) scale(1.05);
-      background: rgba(255, 255, 255, 0.2);
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
+
+    #output {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #fff;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <a href="pair.html">
-      <div class="box">Generate Pair Code</div>
-    </a>
-    <div class="box">Docs</div>
-    <div class="box">Support</div>
-    <div class="box">WASEEM-TECH</div>
+  <div class="glass">
+    <h2>🔐 Generate Pair Code</h2>
+    <input type="text" id="number" placeholder="Enter WhatsApp Number" />
+    <button onclick="generate()">Get Code</button>
+    <div id="output"></div>
   </div>
+
+  <script>
+    function generate() {
+      const num = document.getElementById("number").value.trim();
+      if (!/^[0-9]{8,15}/.test(num)) 
+        document.getElementById("output").innerHTML = "❌ Invalid Number!";
+        return;
+      
+      const code = Math.random().toString(36).substring(2, 10).toUpperCase();
+      document.getElementById("output").innerHTML = `✅ Your Pair Code: <b>{code}</b>`;
+    }
+  </script>
 </body>
 </html>
